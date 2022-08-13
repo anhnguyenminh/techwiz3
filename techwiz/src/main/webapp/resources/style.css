@@ -161,7 +161,7 @@ h1{
 /* container */
 .container{
   width: 100%;
-  margin-top: 25px;
+  margin-top: 100px;
   font-size: 18px;
   /* margin-top: 13%; */
 }
@@ -349,6 +349,14 @@ footer a{
 
 .product-price{
   font-size: x-large;
+}
+
+.copyright {
+  text-align: center;
+  font-size: 14px;
+  margin-bottom: 1%;
+  color: lightgray;
+  margin-top: 1%;
 }
 
 /* responsive */
