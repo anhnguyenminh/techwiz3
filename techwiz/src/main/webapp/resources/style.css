@@ -373,6 +373,15 @@ footer a{
   .fa-user-large{
     display:none !important;
   }
+
+  .guarantee{
+    display: block;
+    width: 90%;
+    margin: 10px auto;
+  }
+  footer {
+    display: block;
+  }
 }
 
 
@@ -401,16 +410,8 @@ footer a{
   }
 }
 
-@media only screen and (max-width: 500px){
+@media only screen and (max-width: 600px){
   #logo{
     margin-left: 7.5em;
-  }
-  .guarantee{
-    display: block;
-    width: 90%;
-    margin: 10px auto;
-  }
-  footer {
-    display: block;
   }
 }

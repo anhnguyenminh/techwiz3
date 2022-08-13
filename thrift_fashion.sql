@@ -20,7 +20,8 @@ SET time_zone = "+00:00";
 --
 -- Cơ sở dữ liệu: `thrift_fashion`
 --
-
+-- create database if not exists `thrift_fashion`;
+-- use `thrift_fashion`;
 -- --------------------------------------------------------
 
 --
@@ -59,12 +60,9 @@ CREATE TABLE `category` (
 --
 
 INSERT INTO `category` (`id`, `name`) VALUES
-(1, 'Men clothes'),
-(2, 'Men\'s accessories'),
-(3, 'Women\'s clothes'),
-(4, 'Women\'s accessories'),
-(5, 'Children\'s wear'),
-(6, 'Children\'s accessories');
+(1, 'Clothes'),
+(2, 'Shoes'),
+(3, 'Accessories');
 
 -- --------------------------------------------------------
 
@@ -84,7 +82,7 @@ CREATE TABLE `comment` (
 --
 
 INSERT INTO `comment` (`id`, `user_id`, `comment_date`, `note`) VALUES
-(1, 2, '2022-08-11', 'Very nice clothes'),
+(1, 2, '2022-08-11', 'Niceeee'),
 (2, 1, '2022-08-08', 'The shirt is very nice and fit'),
 (3, 2, '2022-08-09', 'Yesterday I bought a shirt that fits and is very beautiful'),
 (4, 1, '2022-08-09', 'The shirt is very nice and fit');
@@ -108,16 +106,16 @@ CREATE TABLE `contact` (
 --
 
 INSERT INTO `contact` (`id`, `name`, `email`, `phone`, `description`) VALUES
-(1, 'Mason Greenwood', 'mason@gmail.com', '0147365401', 'I want to place ads on your website'),
-(2, 'Number One', 'number@gmail.com', '0147652147', 'The product was broken after 3 days I want to return it');
+(1, 'Blake Stanton', 'egnition_sample_67@egnition.com', '0147365401', 'I want to place ads on your website'),
+(2, 'Darius Randolph', 'egnition_sample_93@egnition.com', '0147652147', 'The product was broken after 3 days I want to return it');
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `order`
+-- Cấu trúc bảng cho bảng `orders`
 --
 
-CREATE TABLE `order` (
+CREATE TABLE `orders` (
   `id` int(11) NOT NULL,
   `user_id` int(11) DEFAULT NULL,
   `address` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
@@ -128,12 +126,12 @@ CREATE TABLE `order` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `order`
+-- Đang đổ dữ liệu cho bảng `orders`
 --
 
-INSERT INTO `order` (`id`, `user_id`, `address`, `phone`, `name`, `status_id`, `orderDate`) VALUES
+INSERT INTO `orders` (`id`, `user_id`, `address`, `phone`, `name`, `status_id`, `orderDate`) VALUES
 (1, 1, 'Hoan Kiem - Hanoi', '0478562112', 'Mason Mouse', 3, '2022-08-11'),
-(2, 2, 'Hoang Mai - Hanoi', '0147854123', 'Drink', 2, '2022-08-10');
+(2, 2, 'Hoang Mai - Hanoi', '0147854123', 'Garth Huber', 2, '2022-08-10');
 
 -- --------------------------------------------------------
 
@@ -182,8 +180,8 @@ CREATE TABLE `product` (
 --
 
 INSERT INTO `product` (`id`, `imgName`, `category_id`, `status_id`, `size`, `title`, `price`, `description`, `created_at`, `update_at`, `deleted`) VALUES
-(1, 'ao1TreEm.jpg', 5, 1, '5', 'Cool children\'s shirt', 2.4, 'Cotton material is cool in the summer, very suitable for active children\r\nSize: 5 for children from 14 - 16kg\r\nThe product is very popular in the Japanese market', '2022-08-11 01:11:14', '0000-00-00 00:00:00', NULL),
-(2, 'quan1TreEm.jpg', 6, 1, '9-12', 'Cool kids pants', 1.6, 'Cotton material is cool in the summer, very suitable for active children\r\nSize: 5 for children from 8,5 - 10kg, body length 73cm\r\nThe product is very popular in the Japanese market', '2022-08-11 01:11:14', '0000-00-00 00:00:00', NULL);
+(1, 'ao1TreEm.jpg', 1, 1, '5', 'Cool children\'s shirt', 2.4, 'Cotton material is cool in the summer, very suitable for active children\r\nSize: 5 for children from 14 - 16kg\r\nThe product is very popular in the Japanese market', '2022-08-11 01:11:14', '0000-00-00 00:00:00', NULL),
+(2, 'quan1TreEm.jpg', 1, 1, '9-12', 'Cool kids pants', 1.6, 'Cotton material is cool in the summer, very suitable for active children\r\nSize: 5 for children from 8,5 - 10kg, body length 73cm\r\nThe product is very popular in the Japanese market', '2022-08-11 01:11:14', '0000-00-00 00:00:00', NULL);
 
 -- --------------------------------------------------------
 
@@ -221,7 +219,7 @@ CREATE TABLE `status` (
 
 INSERT INTO `status` (`id`, `statusName`) VALUES
 (1, 'In warehouse'),
-(2, 'in cart'),
+(2, 'In cart'),
 (3, 'Confirm and wait for delivery');
 
 -- --------------------------------------------------------
@@ -250,9 +248,9 @@ CREATE TABLE `user` (
 
 INSERT INTO `user` (`id`, `role_id`, `fullname`, `password`, `phone_number`, `email`, `address`, `status`, `created_at`, `update_at`, `deleted`) VALUES
 (1, 2, 'Mason Mouse', '123456', '0698745123', 'mouse.ms@aptechlearning.edu.vn', 'Tokyo-Japan', 1, '2022-08-10 23:02:00', '0000-00-00 00:00:00', NULL),
-(2, 2, 'Drink Water', '123456', '0632145123', 'drink.wt@aptechlearning.edu.vn', 'Hanoi-Vietnam', 1, '2022-08-10 23:02:00', '0000-00-00 00:00:00', NULL),
-(3, 1, 'Admin', '123456', '0354789852', 'admin@gmail.com', 'Hanoi-VN', 1, '2022-08-10 18:09:50', '0000-00-00 00:00:00', NULL),
-(4, 1, 'Management', '123456789', '0314789852', 'mana@gmail.com', 'Hanoi-VN', 1, '2022-08-10 18:09:50', '0000-00-00 00:00:00', NULL);
+(2, 2, 'Garth Huber', '123456', '0632145123', 'drink.wt@aptechlearning.edu.vn', 'Hanoi-Vietnam', 1, '2022-08-10 23:02:00', '0000-00-00 00:00:00', NULL),
+(3, 1, 'Oleg Haley', '123456', '0354789852', 'admin@gmail.com', 'Hanoi-VN', 1, '2022-08-10 18:09:50', '0000-00-00 00:00:00', NULL),
+(4, 1, 'Calvin Kennedy', '123456789', '0314789852', 'mana@gmail.com', 'Hanoi-VN', 1, '2022-08-10 18:09:50', '0000-00-00 00:00:00', NULL);
 
 --
 -- Chỉ mục cho các bảng đã đổ
