@@ -9,7 +9,7 @@ var accForm = `
   <input type="text" class="form-control form-control-user" id="name" name="fullname">
   <input type="hidden" id="id" name="id" value="${id}">
   <label for="">Email</label>
-  <input type="email" class="form-control form-control-user" id="email" name="email" >
+  <input type="email" class="form-control form-control-user" id="email" name="email" readonly>
   <span class="error" id="emailErr"></span>
   <label for="">Phone</label>
   <input type="tel" class="form-control form-control-user" id="phone" name="phone_number">

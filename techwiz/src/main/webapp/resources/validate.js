@@ -1,5 +1,5 @@
 $(function(){
-  
+
 
   $("#submitBtn").click(function(){
     var check = 1;
@@ -17,7 +17,8 @@ $(function(){
     if( !passCheck( $("#password").val(), $("#repassword").val() )){
       $("#repassErr").text("Password does not matched");
       check = 0;
-    }else if( $("#password").val() == "" ){
+    }
+    if( !$("#password").val() ){
       $("#repassErr").text("Password is required");
       check = 0;
     }else{
