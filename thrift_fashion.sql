@@ -286,7 +286,7 @@ ALTER TABLE `contact`
 --
 -- Chỉ mục cho bảng `order`
 --
-ALTER TABLE `order`
+ALTER TABLE `orders`
   ADD PRIMARY KEY (`id`),
   ADD KEY `user_id` (`user_id`),
   ADD KEY `status_id` (`status_id`);
@@ -357,7 +357,7 @@ ALTER TABLE `contact`
 --
 -- AUTO_INCREMENT cho bảng `order`
 --
-ALTER TABLE `order`
+ALTER TABLE `orders`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
@@ -410,7 +410,7 @@ ALTER TABLE `comment`
 --
 -- Các ràng buộc cho bảng `order`
 --
-ALTER TABLE `order`
+ALTER TABLE `orders`
   ADD CONSTRAINT `order_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`),
   ADD CONSTRAINT `order_ibfk_2` FOREIGN KEY (`status_id`) REFERENCES `status` (`id`);
 
@@ -418,7 +418,7 @@ ALTER TABLE `order`
 -- Các ràng buộc cho bảng `orderdetail`
 --
 ALTER TABLE `orderdetail`
-  ADD CONSTRAINT `orderdetail_ibfk_1` FOREIGN KEY (`order_id`) REFERENCES `order` (`id`),
+  ADD CONSTRAINT `orderdetail_ibfk_1` FOREIGN KEY (`order_id`) REFERENCES `orders` (`id`),
   ADD CONSTRAINT `orderdetail_ibfk_2` FOREIGN KEY (`product_id`) REFERENCES `product` (`id`);
 
 --
