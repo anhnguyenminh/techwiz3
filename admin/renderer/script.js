@@ -163,32 +163,27 @@ $("#soldProductData").ready(function(){
   })
 })
 
-// missing data
-// $("#commentsData").ready(function(){
-//   $.get("http://10.0.12.94:8080/API/Comment", function(data){
-//     var commentsData = "";
-//     data.forEach((item) => {
-//
-//      commentsData += `
-//      <tr>
-//          <td class="align-middle">${item.orderId.userId.fullname}</td>
-//          <td class="align-middle">${item.orderId.name}</td>
-//          <td class="align-middle">${item.orderId.userId.phoneNumber}</td>
-//          <td class="align-middle">${item.orderId.orderDate}</td>
-//          <td class="align-middle">${item.orderId.address}</td>
-//          <td class="align-middle">${item.orderId.phone}</td>
-//          <!-- ordered products list -->
-//          <td class="align-middle"><img width="100px" src="../images/products/${item.productId.imgName}" alt="product">   </td>
-//          <td class="align-middle">${item.num * item.price}</td>
-//          <td class="align-middle">
-//              <button type="button" class="btn btn-primary mb-5">Update</button>
-//              <button type="button" class="btn btn-warning mb-5">Delete</button>
-//          </td>
-//      </tr>              `
-//     })
-//     $("#commentsData").html(commentsData)
-//   })
-// })
+missing data
+$("#commentsData").ready(function(){
+  $.get("http://10.0.12.94:8080/API/Comment", function(data){
+    var commentsData = "";
+    data.forEach((item) => {
+
+     commentsData += `
+     <tr>
+         <td class="align-middle">${item.userId.fullname}</td>
+         <td class="align-middle">${item.note}</td>
+         <td class="align-middle">${item.commentDate}</td>
+         <td class="align-middle">
+             <button type="button" class="btn btn-primary mb-5">Update</button>
+             <button type="button" class="btn btn-warning mb-5">Delete</button>
+         </td>
+     </tr>
+     `
+    })
+    $("#commentsData").html(commentsData)
+  })
+})
 
 
 $("#contactData").ready(function(){
