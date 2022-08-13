@@ -66,9 +66,9 @@ $(".products").ready(function(){
       product += `
               <a href="product-details.html?id=${item.id}">
                   <div class="item">
-                    <img src="images/products/${item.title}" alt="">
-                    <p class="product-name">name</p>
-                    <p class="product-price">price</p>
+                    <img src="images/products/${item.imgName}" alt="">
+                    <p class="product-name">${item.title}</p>
+                    <p class="product-price">${item.price} $</p>
                   </div>
                </a>`;
     });

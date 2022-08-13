@@ -12,7 +12,7 @@ $(function(){
   $.get("http://10.0.12.94:8080/API/Product", function(data){
     data.forEach((item, i) => {
       if( id == item.id ){
-        $("#product-image").attr('src', 'images/products/'+item.title)
+        $("#product-image").attr('src', 'images/products/'+item.imgName)
         $("#product-name").text(item.title);
         $("#product-title").text(item.title);
         $("#product-image").text(item.imgName);

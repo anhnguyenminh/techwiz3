@@ -67,14 +67,37 @@
   });
 
   data = "<h1>NEW ARRIVALS</h1><p>Hundreds of practically new items at a fraction of the new price</p>";
-  for (var i = 0; i < 8; i++) {
-    data += `<div class="item">
-                <img src="images/femaleimages/fm-` + (i+1) + `.webp" alt="">
-                <p class="product-name">name</p>
-                <p class="product-price">price</p>
-              </div>`;
-  }
-  $(".new-products").html(data);
+  $.get("http://10.0.12.94:8080/API/Product", function(data){
+
+    product = "<h1>NEW ARRIVAL</h1>";
+    for (var i = data.length-1; i > data.length-9; i--) {
+      product += `
+              <a href="product-details.html?id=${data[i].id}">
+                  <div class="item">
+                    <img src="images/products/${data[i].imgName}" alt="">
+                    <p class="product-name">${data[i].title}</p>
+                    <p class="product-price">${data[i].price} $</p>
+                  </div>
+               </a>`;
+
+    }
+    $(".new-products").html(product);
+
+    product = "<h1>TOP PRODUCT</h1>";
+    for (var i = 0; i < 8; i++) {
+      product += `
+              <a href="product-details.html?id=${data[i].id}">
+                  <div class="item">
+                    <img src="images/products/${data[i].imgName}" alt="">
+                    <p class="product-name">${data[i].title}</p>
+                    <p class="product-price">${data[i].price} $</p>
+                  </div>
+               </a>`;
+
+    }
+    $(".top-products").html(product);
+
+  })
 
   data = "<h1>TOP PRODUCTS</h1>";
   for (var i = 0; i < 8; i++) {
