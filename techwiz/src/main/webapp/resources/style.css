@@ -438,3 +438,9 @@ footer a{
   }
 }
 
+@media only screen and (min-width: 1000px) {
+  .picture-after {
+    display: none !important;
+  }
+}
+
