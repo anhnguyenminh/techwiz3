@@ -1,58 +1,55 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Home</title>
+    <base href="#">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+    <script src="resources/script.js" charset="utf-8" ></script>
+    <script src="resources/glider/glider.js" charset="utf-8" ></script>
+    <link rel="stylesheet" href="resources/glider/glider.css">
+  </head>
+  <body>
 
-<head>
-  <meta charset="utf-8">
-  <title>Home</title>
-  <base href="#">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-  <link rel="icon" href="images/icon.png" type="image/x-icon">
-  <script src="resources/script.js" charset="utf-8"></script>
-  <script src="resources/glider/glider.js" charset="utf-8"></script>
-  <link rel="stylesheet" href="resources/glider/glider.css">
-</head>
+<!-- navbar -->
+    <div class="navbar"></div>
 
-<body>
-
-  <!-- navbar -->
-  <div class="navbar"></div>
-
-  <!-- content -->
-  <!-- working on banner slider-->
-  <div class="container">
-    <script type="text/javascript">
-      window.addEventListener('load', function () {
-        new Glider(document.querySelector('.glider'), {
-          'setting- name': setting - value
+<!-- content -->
+<!-- working on banner slider-->
+    <div class="container">
+      <script type="text/javascript">
+        window.addEventListener('load', function(){
+          new Glider(document.querySelector('.glider'), {
+            setting-name: setting-value
+          })
         })
-      })
-    </script>
-    <div class="glider-contain">
-      <div class="glider">
-        <img src="images/banner-1.jpg" alt="">
-        <img src="images/banner-2.jpg" alt="">
-        <img src="images/banner-3.jpg" alt="">
+      </script>
+      <div class="glider-contain">
+        <div class="glider">
+          <img src="images/banner-1.jpg" alt="">
+          <img src="images/banner-2.jpg" alt="">
+          <img src="images/banner-3.jpg" alt="">
+        </div>
+
+        <div role="tablist" class="dots"></div>
       </div>
 
-      <div role="tablist" class="dots"></div>
+  <!-- new products -->
+        <div class="new-products"></div>
+        <a class="big-button" href="products.html">SHOP NOW</a>
+
+  <!-- top products -->
+        <div class="top-products"></div>
+        <a class="big-button" href="products.html">SHOP NOW</a>
+
+<!-- collection -->
+        <div class="collection"></div>
+  <!-- bottom part -->
+        <div class="bottom-part"></div>
+
     </div>
-
-    <!-- new products -->
-    <div class="new-products"></div>
-    <a class="big-button" href="products.html">SHOP NOW</a>
-
-    <!-- top products -->
-    <div class="top-products"></div>
-    <a class="big-button" href="products.html">SHOP NOW</a>
-
-    <!-- collection -->
-    <div class="collection"></div>
-    <!-- bottom part -->
-    <div class="bottom-part"></div>
-
-  </div>
-</body>
-
+  </body>
 </html>
 
 <script type="text/javascript">
@@ -72,7 +69,7 @@
   data = "<h1>NEW PRODUCTS</h1>";
   for (var i = 0; i < 8; i++) {
     data += `<div class="item">
-                <img src="images/femaleimages/fm-` + (i + 1) + `.webp" alt="">
+                <img src="images/femaleimages/fm-` + (i+1) + `.webp" alt="">
                 <p class="product-name">name</p>
                 <p class="product-price">price</p>
               </div>`;
@@ -82,7 +79,7 @@
   data = "<h1>TOP PRODUCTS</h1>";
   for (var i = 0; i < 8; i++) {
     data += `<div class="item">
-                <img src="images/maleimages/m-` + (i + 1) + `.webp" alt="">
+                <img src="images/maleimages/m-` + (i+1) + `.webp" alt="">
                 <p class="product-name">name</p>
                 <p class="product-price">price</p>
               </div>`;
@@ -90,3 +87,4 @@
   $(".top-products").html(data);
 
 </script>
+

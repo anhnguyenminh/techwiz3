@@ -30,7 +30,7 @@
     <div id="wrapper">
 
         <!-- Sidebar -->
-        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion position-sticky" id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
@@ -65,7 +65,7 @@
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Classify:</h6>
                         <a class="collapse-item" href="role_table.html">Decentralization</a>
-                        <a class="collapse-item" href="#">Order/Product status</a>
+                        <a class="collapse-item" href="product_status.html">Order/Product status</a>
                     </div>
                 </div>
             </li>
@@ -91,7 +91,7 @@
                         <h6 class="collapse-header">Product Screens:</h6>
                         <a class="collapse-item" href="category_table.html">Category</a>
                         <a class="collapse-item" href="product_in_warehouse_table.html">Products in warehouse</a>
-                        <a class="collapse-item" href="prroduct_sold_table.html">Products sold</a>
+                        <a class="collapse-item" href="#">Products sold</a>
                     </div>
                 </div>
             </li>
@@ -116,8 +116,6 @@
             <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block">
 
-
-
         </ul>
         <!-- End of Sidebar -->
 
@@ -128,7 +126,7 @@
             <div id="content">
 
                 <!-- Topbar -->
-                <nav class="navbar navbar-expand navbar-light bg-white topbar mb-5 static-top shadow">
+                <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
 
                     <!-- Sidebar Toggle (Topbar) -->
                     <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
@@ -182,31 +180,33 @@
 
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
-
                     <!-- DataTales Example -->
-                    <div class="card shadow mb-4 col-lg-6" style="margin-left: 15em;">
+                    <div class="card shadow mb-4">
                         <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary">Product status data table</h6>
-                            <a class="btn btn-success" href="form_addStatus.html" role="button">Add Product Status</a>
+                            <h6 class="m-0 font-weight-bold text-primary">Product data sheet in warehouse</h6>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
                                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                     <thead>
                                         <tr>
-                                            <th class="col-lg-1">No</th>
-                                            <th class="col-lg-2">Status</th>
+                                            <th class="col-lg-1">Orderer</th>
+                                            <th class="col-lg-1">Receiver</th>
+                                            <th class="col-lg-1">Orderer's phone</th>
+                                            <th class="col-lg-1">Order date</th>
+                                            <th class="col-lg-2">Delivery address</th>
+                                            <th class="col-lg-1">Recipient's tel</th>
+                                            <th class="col-lg-2">List of products</th>
+                                            <th class="col-lg-1">Total order value</th>
                                             <th class="col-lg-2">Action</th>
-
                                         </tr>
                                     </thead>
-                                    <tbody id="statusData">
+                                    <tbody id="soldProductData">
                                     </tbody>
                                 </table>
                             </div>
                         </div>
                     </div>
-
                 </div>
                 <!-- /.container-fluid -->
 
@@ -239,6 +239,8 @@
     <!-- Custom scripts for all pages
     <script src="js/sb-admin-2.min.js"></script>
     -->
+
+
 
 </body>
 
