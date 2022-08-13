@@ -9,7 +9,10 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Thrift Fashion - Login</title>
+    <title>Dashboard - Update Product In Warehouse</title>
+
+    <!-- favicon -->
+    <link rel="shortcut icon" href="img/favicon.ico" />
 
     <!-- favicon -->
     <link rel="shortcut icon" href="img/favicon.ico" />
@@ -22,8 +25,6 @@
 
     <!-- Custom styles for this template-->
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="../css/sb-admin-2.min.css" type="text/css" />
-
 
 </head>
 
@@ -44,43 +45,44 @@
                             <div class="col-lg-6">
                                 <div class=" p-5">
                                     <div class="text-center">
-                                        <h1 class="h4 text-gray-900 mb-4">Welcome Back!</h1>
+                                        <h1 class="h4 text-gray-900 mb-4">Update Product In Warehouse</h1>
                                     </div>
-                                    <form class="user" action="/user/login" method="post">
+                                    <form class="updateProduct">
                                         <div class="form-group">
-                                            <input type="email" class="form-control form-control-user"
-                                                id="exampleInputEmail" aria-describedby="emailHelp"
-                                                placeholder="Enter Email Address..." name="email">
+                                            <label class=" col-form-label">Title</label>
+                                            <input type="text" class="form-control form-control-user"
+                                                id="getProductInWarehouse_title">
                                         </div>
                                         <div class="form-group">
-                                            <input type="password" class="form-control form-control-user"
-                                                id="exampleInputPassword" placeholder="Password" name="password">
+                                            <label class=" col-form-label">Category</label>
+                                            <input type="text" class="form-control form-control-user"
+                                                id="getProductInWarehouse_category">
                                         </div>
                                         <div class="form-group">
-                                            <div class="custom-control custom-checkbox small">
-                                                <input type="checkbox" class="custom-control-input" id="customCheck">
-                                                <label class="custom-control-label" for="customCheck">Remember
-                                                    Me</label>
-                                            </div>
+                                            <label class=" col-form-label">Size</label>
+                                            <input type="text" class="form-control form-control-user"
+                                                id="getProductInWarehouse_size">
                                         </div>
-                                        <button type="submit" class="btn btn-primary btn-user btn-block">
-                                            Login
-                                        </button>
+                                        <div class="form-group">
+                                            <label class=" col-form-label">Price</label>
+                                            <input type="text" class="form-control form-control-user"
+                                                id="getProductInWarehouse_price">
+                                        </div>
+                                        <div class="form-group">
+                                            <label class=" col-form-label">Description</label>
+                                            <input type="text" class="form-control form-control-user"
+                                                id="getProductInWarehouse_price">
+                                        </div>
+                                        <div class="form-group">
+                                            <label class=" col-form-label">Image</label>
+                                            <input type="text" class="form-control form-control-user"
+                                                id="getProductInWarehouse_price">
+                                        </div>
+
+                                        <button type="submit" class="btn btn-primary btn-user btn-block">Update</button>
                                         <hr>
-                                        <a class="btn btn-google btn-user btn-block">
-                                            <i class="fab fa-google fa-fw"></i> Login with Google
-                                        </a>
-                                        <a class="btn btn-facebook btn-user btn-block">
-                                            <i class="fab fa-facebook-f fa-fw"></i> Login with Facebook
-                                        </a>
                                     </form>
-                                    <hr>
-                                    <div class="text-center">
-                                        <a class="small">Forgot Password?</a>
-                                    </div>
-                                    <div class="text-center">
-                                        <a class="small" href="register.html">Create an Account!</a>
-                                    </div>
+
                                 </div>
                             </div>
                             <div class="col-lg-3"></div>
