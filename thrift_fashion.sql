@@ -247,10 +247,10 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id`, `role_id`, `fullname`, `password`, `phone_number`, `email`, `address`, `status`, `created_at`, `update_at`, `deleted`) VALUES
-(1, 2, 'Mason Mouse', '123456', '0698745123', 'mouse.ms@aptechlearning.edu.vn', 'Tokyo-Japan', 1, '2022-08-10 23:02:00', '0000-00-00 00:00:00', NULL),
-(2, 2, 'Garth Huber', '123456', '0632145123', 'drink.wt@aptechlearning.edu.vn', 'Hanoi-Vietnam', 1, '2022-08-10 23:02:00', '0000-00-00 00:00:00', NULL),
-(3, 1, 'Oleg Haley', '123456', '0354789852', 'admin@gmail.com', 'Hanoi-VN', 1, '2022-08-10 18:09:50', '0000-00-00 00:00:00', NULL),
-(4, 1, 'Calvin Kennedy', '123456789', '0314789852', 'mana@gmail.com', 'Hanoi-VN', 1, '2022-08-10 18:09:50', '0000-00-00 00:00:00', NULL);
+(1, 2, 'Mason Mouse', '123456', '0698745123', 'mouse.ms@aptechlearning.edu.vn', 'Tokyo-Japan', 1, '2022-08-10 23:02:00', '2022-08-10 23:02:00', NULL),
+(2, 2, 'Garth Huber', '123456', '0632145123', 'drink.wt@aptechlearning.edu.vn', 'Hanoi-Vietnam', 1, '2022-08-10 23:02:00', '2022-08-10 23:02:00', NULL),
+(3, 1, 'Oleg Haley', '123456', '0354789852', 'admin@gmail.com', 'Hanoi-VN', 1, '2022-08-10 18:09:50', '2022-08-10 22:09:12', NULL),
+(4, 1, 'Calvin Kennedy', '123456789', '0314789852', 'mana@gmail.com', 'Hanoi-VN', 1, '2022-08-10 18:09:50', '2022-08-10 21:09:23', NULL);
 
 --
 -- Chỉ mục cho các bảng đã đổ
