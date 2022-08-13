@@ -32,7 +32,7 @@ public class product {
 
     private Integer deleted;
 
-    private Integer categoryId;
+    private category categoryId;
 
     private Integer statusId;
 
@@ -49,7 +49,7 @@ public class product {
         this.createdAt = p.getCreatedAt();
         this.updateAt = p.getUpdateAt();
         this.deleted = p.getDeleted();
-        this.categoryId = p.getCategoryId().getId();
+        this.categoryId = new category(p.getCategoryId());
         this.statusId = p.getStatusId().getId();
     }
 
@@ -125,16 +125,22 @@ public class product {
         this.deleted = deleted;
     }
 
-    @Override
-    public int hashCode() {
-        int hash = 0;
-        hash += (id != null ? id.hashCode() : 0);
-        return hash;
+    public category getCategoryId() {
+        return categoryId;
     }
 
-    @Override
-    public String toString() {
-        return "com.aptech.techwiz.entities.Product[ id=" + id + " ]";
+    public void setCategoryId(category categoryId) {
+        this.categoryId = categoryId;
     }
+
+    public Integer getStatusId() {
+        return statusId;
+    }
+
+    public void setStatusId(Integer statusId) {
+        this.statusId = statusId;
+    }
+
+    
 
 }
