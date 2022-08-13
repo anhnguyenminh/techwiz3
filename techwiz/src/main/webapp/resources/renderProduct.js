@@ -9,9 +9,10 @@
 $(function(){
   var id = window.location.href.split("?id=")[1];
 
-  $.get("http://10.0.12.90:8080/Product", function(data){
+  $.get("http://10.0.12.94:8080/API/Product", function(data){
     data.forEach((item, i) => {
-      if( id == (i + 1) ){
+      if( id == item.id ){
+        $("#product-image").attr('src', 'images/products/'+item.title)
         $("#product-name").text(item.title);
         $("#product-title").text(item.title);
         $("#product-image").text(item.imgName);
@@ -20,8 +21,6 @@ $(function(){
         $("#product-size").text("Size: " + item.size);
       }
     });
-
-    return false;
 
   })
 

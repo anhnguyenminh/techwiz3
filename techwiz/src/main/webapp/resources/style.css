@@ -178,6 +178,14 @@ h1{
 .show-products{
   margin-top: 180px;
 }
+.filter-btn{
+  padding: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+.filter-btn:hover{
+  text-decoration: underline;
+}
 /* end */
 .item{
   display: inline-block;
@@ -359,6 +367,8 @@ footer a{
   margin-top: 1%;
 }
 
+
+
 /* responsive */
 @media only screen and (max-width:800px) {
   .link-list{
@@ -388,6 +398,7 @@ footer a{
   padding-left: 7.5%;
   width: 40%;
 }
+
 
 @media only screen and (max-width: 400px) {
   /* .guarantee{

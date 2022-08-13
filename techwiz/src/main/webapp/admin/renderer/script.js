@@ -194,7 +194,6 @@ $("#contactData").ready(function(){
          <td class="align-middle">${item.name}</td>
          <td class="align-middle">${item.email}</td>
          <td class="align-middle">${item.description}</td>
-         <td class="align-middle">${item.name}</td>
          <td class="align-middle">
              <button type="button" class="btn btn-primary mb-5">Update</button>
              <button type="button" class="btn btn-warning mb-5">Delete</button>
