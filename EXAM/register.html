@@ -5,7 +5,7 @@
     <title>Create Account</title>
     <link rel="icon" href="images/icon.png" type="image/x-icon">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="resources/script.js?v=1" charset="utf-8" ></script>
+    <script src="resources/script.js" charset="utf-8" ></script>
     <script src="resources/validate.js" charset="utf-8" ></script>
     <link rel="stylesheet" href="resources/account.css">
   </head>
@@ -21,17 +21,17 @@
         <form action="" method="post">
           <h2>Create an account!</h2>
           <label>
-            <input class="account" id="name" type="text" name="name" required placeholder="Full name">
+            <input class="account inptField" id="name" type="text" name="name" required placeholder="Full name">
           </label>
           <label>
-            <input class="account" id="email" type="email" name="email" required placeholder="Email address">
+            <input class="account inptField" id="email" type="email" name="email" required placeholder="Email address">
             <span class="error" id="emailErr"></span>
           </label>
           <label>
-            <input class="account" id="password" type="password" name="password" required placeholder="Password">
+            <input class="account inptField" id="password" type="password" name="password" required placeholder="Password">
           </label>
           <label>
-            <input class="account" id="repassword" type="password" name="repassword" required placeholder="Repeat Password">
+            <input class="account inptField" id="repassword" type="password" name="repassword" required placeholder="Repeat Password">
             <span class="error" id="repassErr"></span>
           </label>
           <label>
@@ -45,10 +45,9 @@
             <button class="account" id='wfb' type="submit" name="wfb"><i class='fa-brands fa-facebook'></i> Register with Facebook</button>
           </label>
         </form>
-
-      </div>
-      <div class="more-account-option">
-        <a href="login.html">Already have an account? Login!</a>
+        <div class="more-account-option">
+          <a href="login.html">Already have an account? Login!</a>
+        </div>
       </div>
     <!-- bottom part -->
         <div class="bottom-part"></div>

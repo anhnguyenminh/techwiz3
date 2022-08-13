@@ -1,11 +1,11 @@
 
 .account-form{
-  width: 80%;
-  max-width: 800px;
+  width: 700px;
   display: block;
-  margin: auto;
   text-align: center;
-  margin-top: 250px;
+  margin: 150px auto;
+  padding: 40px 0;
+  box-shadow: 0px 0px 8px 1px #aaa;
 }
 .account-form h2{
   margin: 10px 0;
@@ -37,6 +37,11 @@ hr{
 #login:hover, #register:hover{
   background-color: #ccc;
 }
+.inptField:focus{
+  transition: 0.2s;
+  border: 4px solid #D3DCF7;
+  padding: 12px;
+}
 #wgg, #wfb{
   color: #fff;
 }
@@ -55,4 +60,13 @@ hr{
 
 .more-account-option{
   text-align: center;
+  display: block;
+}
+/* checkbox to the left */
+#remember{
+  margin-left: -180px;
+}
+/* hide guarantee */
+.guarantee{
+  display: none !important;
 }

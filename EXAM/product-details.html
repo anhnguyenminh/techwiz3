@@ -4,9 +4,10 @@
     <meta charset="utf-8">
     <title>Details</title>
     <link rel="icon" href="images/icon.png" type="image/x-icon">
-    <link rel="stylesheet" href="/EXAM/resources/product-details.css">
+    <link rel="stylesheet" href="resources/product-details.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="resources/script.js?v=1" charset="utf-8" ></script>
+    <script src="resources/script.js" charset="utf-8" ></script>
+    <script src="resources/renderProduct.js" charset="utf-8" ></script>
     </script>
   </head>
   <body>
@@ -18,30 +19,28 @@
     <div class="container">
       <div class="details">
         <div class="images-area">
-          <img src="/EXAM/images/maleimages/m-1.webp" alt="m-1">
-          <img src="/EXAM/images/maleimages/m-2.webp" alt="m-2">
-          <img src="/EXAM/images/maleimages/m-3.webp" alt="m-3">
+          <figure>
+            <img id="product-image" src="" alt="product-image">
+            <figcaption id="product-title"></figcaption>
+          </figure>
         </div>
 
         <div class="detail-area">
           <div class="detail-content">
             <div class="basic-desc">
-              <p id="desc-name">Shirts for male</p>
-              <p id="desc-price">Price: 10000 $</p>
-              <p id="desc-code">Code: 1234466784532</p>
+              <h1 id="product-name"></h1>
+              <p id="product-price"></p>
             </div>
             <hr>
 
             <h2>Details</h2>
             <div class="full-detail">
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem iste voluptatibus cum qui a ullam quod assumenda consectetur quos numquam cupiditate, tempora modi similique consequatur molestias dolorum. Ab, repudiandae veniam!</p>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem iste voluptatibus cum qui a ullam quod assumenda consectetur quos numquam cupiditate, tempora modi similique consequatur molestias dolorum. Ab, repudiandae veniam!</p>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem iste voluptatibus cum qui a ullam quod assumenda consectetur quos numquam cupiditate, tempora modi similique consequatur molestias dolorum. Ab, repudiandae veniam!</p>
+              <p id="product-detail"></p>
             </div>
             <hr>
 
             <div class="purchase-area">
-              <p>Size: </p>
+              <p id="product-size"></p>
               <p>Quantity: 1</p>
               <!-- add to cart button -->
               <a id="addtocartbtn" href="">Add to cart</a>
@@ -49,8 +48,8 @@
             <hr>
 
             <div class="instructions">
-              <a href="/EXAM/howto/purchase.html">How to purchase ?</a>
-              <a href="/EXAM/howto/choose-size.html">How to choose size ?</a>
+              <a href="howto/purchase.html">How to purchase ?</a>
+              <a href="howto/choose-size.html">How to choose size ?</a>
             </div>
 
           </div>

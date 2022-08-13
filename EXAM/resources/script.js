@@ -1,4 +1,3 @@
-$("head").append('<base href="'+ window.location.pathname +'"></base>');
 
 
 function toggleSearchForm(){
@@ -11,15 +10,18 @@ function toggleSearchForm(){
 
 
 $(function(){
-  $.get("/Techwiz/EXAM/components/navbar", function(data,status){
+  $("head").append("<base href='" + window.location.host +"'/EXAM/ />")
+
+
+  $.get("components/navbar.html", function(data,status){
     $(".navbar").html(data);
   });
-  $.get("/Techwiz/EXAM/components/bottom.html", function(data,status){
+  $.get("components/bottom.html", function(data,status){
     $(".bottom-part").html(data);
   });
   // add to head elements
   $("head").append('<meta name="viewport" content="width=device-width, initial-scale=1.0">');
-  $("head").append('<link rel="stylesheet" href="/Techwiz/EXAM/resources/style.css">');
+  $("head").append('<link rel="stylesheet" href="resources/style.css">');
   $("head").append('<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">');
 })
 

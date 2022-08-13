@@ -1,31 +1,38 @@
 $(function(){
   // check email
-  $("#email").keyup(function(){
-    if( !emailCheck( $("#email").val()) ){
-      $("#emailErr").text("Invalid Email");
-    }else if( !$("#email").val() ){
-      $("#emailErr").text("Email is required");
-    }else{
-      $("#emailErr").text("");
-    }
+  $("#email").click(function(){
+    $(this).keyup(function(){
+      if( !emailCheck( $("#email").val()) ){
+        $("#emailErr").text("Invalid Email");
+      }else if( !$("#email").val() ){
+        $("#emailErr").text("Email is required");
+      }else{
+        $("#emailErr").text("");
+      }
+    })
   })
 
   // check password
-  $("#password").keyup(function(){
-    if( !passCheck( $("#password").val(), $("#repassword").val() )){
-      $("#repassErr").text("Password does not matched");
-    }else if( $("#password").val() == "" ){
-      $("#repassErr").text("Password is required");
-    }else{
-      $("#repassErr").text("");
-    }
+  $("#password").click(function(){
+    $(this).keyup(function(){
+      if( !passCheck( $("#password").val(), $("#repassword").val() )){
+        $("#repassErr").text("Password does not matched");
+      }else if( $("#password").val() == "" ){
+        $("#repassErr").text("Password is required");
+      }else{
+        $("#repassErr").text("");
+      }
+    })
   })
-  $("#repassword").keyup(function(){
-    if( !passCheck( $("#password").val(), $("#repassword").val() )){
-      $("#repassErr").text("Password does not matched");
-    }else{
-      $("#repassErr").text("");
-    }
+  $("#repassword").click(function(){
+    $(this).keyup(function(){
+      if( !passCheck( $("#password").val(), $("#repassword").val() )){
+        $("#repassErr").text("Password does not matched");
+      }else{
+        $("#repassErr").text("");
+      }
+
+    })
   })
 
 })

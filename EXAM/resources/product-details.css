@@ -1,6 +1,9 @@
 h2{
   text-align: center;
 }
+h1{
+  text-align: left !important;
+}
 .details{
   margin-top: 150px;
   display: grid;
@@ -16,6 +19,9 @@ h2{
   display: block;
   position:relative;
   line-height: 30px;
+}
+.detail-area h2{
+  padding-top: 15px;
 }
 .detail-content{
   position: sticky;
