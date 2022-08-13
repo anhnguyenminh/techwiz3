@@ -384,6 +384,10 @@ footer a{
   }
 }
 
+.form {
+  padding-left: 7.5%;
+  width: 40%;
+}
 
 @media only screen and (max-width: 400px) {
   /* .guarantee{
@@ -415,3 +419,18 @@ footer a{
     margin-left: 7.5em;
   }
 }
+
+@media only screen and (max-width: 1000px){
+  .picture-before {
+    display: none !important;
+  }
+  .form {
+    width: 80%;
+  }
+  .picture-after{
+    width: 90%;
+    margin-left: 5%;
+    height: 300px;
+  }
+}
+
