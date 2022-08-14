@@ -43,7 +43,7 @@
               <p id="product-size"></p>
               <p>Quantity: 1</p>
               <!-- add to cart button -->
-              <a id="addtocartbtn" href="">Add to cart</a>
+              <span id="addtocartbtn" href="">Add to cart</span>
             </div>
             <hr>
 
@@ -64,3 +64,18 @@
     </div>
   </body>
 </html>
+
+
+<script type="text/javascript">
+  $(function(){
+    $("#addtocartbtn").click(addCart)
+
+    // add to cart function
+
+    function addCart(){
+      var id = window.location.href.split("id=")[1];
+      localStorage.setItem("item"+id, id);
+    }
+
+  })
+</script>

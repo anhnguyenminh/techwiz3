@@ -29,7 +29,7 @@ $(function(){
 
 })
 
-$.get("http://10.0.12.94:8080/API/User", function(data){
+$.get("http://10.0.12.80:8080/API/User", function(data){
   data.forEach((item, i) => {
     if( item.id == id && item.roleId == role ){
       $("#name").val(item.fullname)
