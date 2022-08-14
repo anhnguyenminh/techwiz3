@@ -1,4 +1,4 @@
-$(function(){
+$(function () {
   $("head").append('<link rel="shortcut icon" href="img/favicon.ico" />')
 })
 
@@ -7,8 +7,8 @@ function loadAccountData(role){
     var accData = "";
     data.forEach((item) => {
 
-      if( item.roleId == role && role == 1 ){
-         accData += `
+      if (item.roleId == role && role == 1) {
+        accData += `
                    <tr>
                        <td>${item.fullname}</td>
                        <td>${item.email}</td>
@@ -22,7 +22,7 @@ function loadAccountData(role){
                        </th>
                    </tr>
                   `
-      }else if (item.roleId == role && role == 2 ) {
+      } else if (item.roleId == role && role == 2) {
         accData += `
                   <tr>
                       <td>${item.fullname}</td>
@@ -59,7 +59,7 @@ function loadRole(){
     var roleData = "";
     data.forEach((item) => {
 
-     roleData += `
+      roleData += `
                <tr>
                    <td>${item.id}</td>
                    <td>${item.name}</td>
@@ -79,7 +79,7 @@ $("#statusData").ready(function(){
     var statusData = "";
     data.forEach((item) => {
 
-     statusData += `
+      statusData += `
                <tr>
                    <td>${item.id}</td>
                    <td>${item.statusName}</td>
@@ -99,7 +99,7 @@ $("#categoryData").ready(function(){
     var categoryData = "";
     data.forEach((item) => {
 
-     categoryData += `
+      categoryData += `
                <tr>
                    <td>${item.id}</td>
                    <td>${item.name}</td>
@@ -119,7 +119,7 @@ $("#productsData").ready(function(){
     var productaData = "";
     data.forEach((item) => {
 
-     productaData += `
+      productaData += `
                <tr>
                  <td>${item.title}</td>
                  <td>${item.categoryId.name}</td>
@@ -142,7 +142,7 @@ $("#soldProductData").ready(function(){
   $.get("http://10.0.12.80:8080/API/Orderdetail", function(data){
     var soldProductaData = "";
     data.forEach((item) => {
-     soldProductaData += `
+      soldProductaData += `
      <tr>
          <td class="align-middle">${item.orderId.userId.fullname}</td>
          <td class="align-middle">${item.orderId.name}</td>
@@ -168,7 +168,7 @@ $("#commentsData").ready(function(){
     var commentsData = "";
     data.forEach((item) => {
 
-     commentsData += `
+      commentsData += `
      <tr>
          <td class="align-middle">${item.userId.fullname}</td>
          <td class="align-middle">${item.note}</td>
@@ -189,7 +189,7 @@ $("#contactData").ready(function(){
   $.get("http://10.0.12.80:8080/API/Contact", function(data){
     var contactData = "";
     data.forEach((item) => {
-     contactData += `
+      contactData += `
      <tr>
          <td class="align-middle">${item.name}</td>
          <td class="align-middle">${item.email}</td>
