@@ -2,8 +2,8 @@ $(function () {
   $("head").append('<link rel="shortcut icon" href="img/favicon.ico" />')
 })
 
-function loadAccountData(role){
-  $.get("http://10.0.12.80:8080/API/User", function(data){
+function loadAccountData(role) {
+  $.get(BASE_URL + "/API/User", function (data) {
     var accData = "";
     data.forEach((item) => {
 
@@ -54,8 +54,8 @@ function loadAccountData(role){
 
 }
 
-function loadRole(){
-  $.get("http://10.0.12.80:8080/API/Role", function(data){
+function loadRole() {
+  $.get(BASE_URL + "/API/Role", function (data) {
     var roleData = "";
     data.forEach((item) => {
 
@@ -74,8 +74,8 @@ function loadRole(){
   })
 }
 
-$("#statusData").ready(function(){
-  $.get("http://10.0.12.80:8080/API/Status", function(data){
+$("#statusData").ready(function () {
+  $.get(BASE_URL + "/API/Status", function (data) {
     var statusData = "";
     data.forEach((item) => {
 
@@ -94,8 +94,8 @@ $("#statusData").ready(function(){
   })
 })
 
-$("#categoryData").ready(function(){
-  $.get("http://10.0.12.80:8080/API/Category", function(data){
+$("#categoryData").ready(function () {
+  $.get(BASE_URL + "/API/Category", function (data) {
     var categoryData = "";
     data.forEach((item) => {
 
@@ -114,8 +114,8 @@ $("#categoryData").ready(function(){
   })
 })
 
-$("#productsData").ready(function(){
-  $.get("http://10.0.12.80:8080/API/Product", function(data){
+$("#productsData").ready(function () {
+  $.get(BASE_URL + "/API/Product", function (data) {
     var productaData = "";
     data.forEach((item) => {
 
@@ -138,8 +138,8 @@ $("#productsData").ready(function(){
   })
 })
 
-$("#soldProductData").ready(function(){
-  $.get("http://10.0.12.80:8080/API/Orderdetail", function(data){
+$("#soldProductData").ready(function () {
+  $.get(BASE_URL + "/API/Orderdetail", function (data) {
     var soldProductaData = "";
     data.forEach((item) => {
       soldProductaData += `
@@ -163,8 +163,8 @@ $("#soldProductData").ready(function(){
   })
 })
 
-$("#commentsData").ready(function(){
-  $.get("http://10.0.12.80:8080/API/Comment", function(data){
+$("#commentsData").ready(function () {
+  $.get(BASE_URL + "/API/Comment", function (data) {
     var commentsData = "";
     data.forEach((item) => {
 
@@ -185,8 +185,8 @@ $("#commentsData").ready(function(){
 })
 
 
-$("#contactData").ready(function(){
-  $.get("http://10.0.12.80:8080/API/Contact", function(data){
+$("#contactData").ready(function () {
+  $.get(BASE_URL + "/API/Contact", function (data) {
     var contactData = "";
     data.forEach((item) => {
       contactData += `

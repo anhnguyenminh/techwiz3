@@ -14,10 +14,10 @@
     <class>com.aptech.techwiz.entities.Role</class>
     <class>com.aptech.techwiz.entities.Orders</class>
     <properties>
-      <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:8080/thrift_fashion"/>
+      <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/thrift_fashion"/>
       <property name="javax.persistence.jdbc.user" value="root"/>
       <property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
-      <property name="javax.persistence.jdbc.password" value="0123"/>
+      <property name="javax.persistence.jdbc.password" value=""/>
     </properties>
   </persistence-unit>
 </persistence>

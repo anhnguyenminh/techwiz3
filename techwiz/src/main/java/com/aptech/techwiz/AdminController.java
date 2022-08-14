@@ -12,8 +12,11 @@ import com.aptech.techwiz.entities.User;
 import controller.BaseController;
 import java.util.Date;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.jws.WebParam;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -24,7 +27,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 @RequestMapping("/user")
 public class AdminController extends BaseController {
-
     @PostMapping("/register")
     public String register(@WebParam(name = "fullname") String fullname,
             @WebParam(name = "email") String email,
@@ -52,12 +54,35 @@ public class AdminController extends BaseController {
         }
         return "redirect:../admin/login.html";
     }
+    
+    @PostMapping("/update")
+    public String update(@WebParam(name = "fullname") String fullname,
+            @WebParam(name = "email") String email,
+            @WebParam(name = "password") String password,
+            @WebParam(name = "phone_number") String phone_number,
+            @WebParam(name = "id") String id
+    ) {
+        UserJpaController userJpaController = new UserJpaController(factory);
+
+        User user = userJpaController.findUser(Integer.parseInt(id));
+        user.setFullname(fullname);
+        user.setPassword(getSecurityMD5(password));
+        user.setPhoneNumber(phone_number);
+        user.setUpdateAt(new Date());
+        
+            try {
+                userJpaController.edit(user);
+            } catch (Exception ex) {
+                Logger.getLogger(AdminController.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        return "redirect:../admin/index.html";
+    }
 
     @PostMapping("/login")
     public String login(@WebParam(name = "email") String email,
             @WebParam(name = "password") String password
     ) {
-                System.out.println(password+" "+email+" ");
+        System.out.println(password+" "+email+" ");
         System.out.println(getSecurityMD5(password));
 
         UserJpaController userJpaController = new UserJpaController(factory);
