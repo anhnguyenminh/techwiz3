@@ -7,12 +7,11 @@ function loadAccountData(role) {
     var accData = "";
     data.forEach((item) => {
 
-      if (item.roleId == role && role == 1) {
+      if (item.roleId == role && role == 1 && item.deleted == 0) {
         accData += `
                    <tr>
                        <td>${item.fullname}</td>
                        <td>${item.email}</td>
-                       <td>${item.password}</td>
                        <td>${item.phoneNumber}</td>
                        <td>${item.createdAt}</td>
                        <td>${item.updateAt}</td>
@@ -22,12 +21,11 @@ function loadAccountData(role) {
                        </th>
                    </tr>
                   `
-      } else if (item.roleId == role && role == 2) {
+      } else if (item.roleId == role && role == 2 && item.deleted == 0) {
         accData += `
                   <tr>
                       <td>${item.fullname}</td>
                       <td>${item.email}</td>
-                      <td>${item.password}</td>
                       <td>${item.phoneNumber}</td>
                       <td>${item.address}</td>
                       <td>${item.createdAt}</td>

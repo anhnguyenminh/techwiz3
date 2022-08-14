@@ -47,7 +47,7 @@ $(function(){
 
 // render filter
 $(".filter").ready(function(){
-  var filter = `<span class="filter-btn" id="0">All</span>`
+  var filter = `<span class="filter-btn" onclick="loadCategory(0)">All</span>`
   $.get(BASE_URL + "/API/Category", function(data){
     data.forEach((item) => {
       filter += `<span class="filter-btn"  onclick="loadCategory(${item.id})">${item.name}</span>`
@@ -57,12 +57,11 @@ $(".filter").ready(function(){
   })
 })
 
-// fake data
+
 function loadCategory(id) {
 
-  $.get(BASE_URL + "/API/Category", function(data){
+  $.get(BASE_URL + "/API/Product", function(data){
     product = "";
-    data = JSON.parse(data);
     if ( id != 0 ) {
       data.forEach((item) => {
 
@@ -100,10 +99,8 @@ function loadCategory(id) {
 
 // render all
 function loadDefault(){
-    $.get(BASE_URL + "/API/Product", function(data){
+  $.get(BASE_URL + "/API/Product", function(data){
       product = "";
-      data = JSON.parse(data);
-
       data.forEach((item) => {
         product += `
                 <a href="product-details.html?id=${item.id}">
@@ -116,8 +113,38 @@ function loadDefault(){
       });
       $(".products").html(product);
 
-
     })
-
 }
 loadDefault();
+
+
+// load cart
+
+$(function(){
+
+
+  var values = [],
+  keys = Object.keys(localStorage),
+  i = keys.length;
+
+  while ( i-- ) {
+      values.push(keys[i] );
+  }
+  var cartVal = ""
+
+  values.forEach((item) => {
+  $.get(BASE_URL + "/API/Product", function(data){
+      id = localStorage.getItem(item);
+      data.forEach((data) => {
+        if( data.id == id ){
+          cartVal += `<li>${data.title} : ${data.price} $</li>`;
+        }
+      });
+      $("#cart-item").html(cartVal);
+    });
+  })
+})
+
+$("#open-cart")
+
+

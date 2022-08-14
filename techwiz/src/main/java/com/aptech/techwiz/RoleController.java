@@ -33,7 +33,7 @@ public class RoleController extends BaseController {
 
         roleJpaController.create(role);
 
-        return "redirect:/role_table.html";
+        return "redirect:../admin/role_table.html";
     }
 
     @PostMapping("/update")
@@ -49,6 +49,7 @@ public class RoleController extends BaseController {
         }
         return "redirect:/role_table.html";
     }
+
     @PostMapping("/delete")
     public String delete(@WebParam(name = "id") String id) {
 
@@ -58,7 +59,8 @@ public class RoleController extends BaseController {
         } catch (NonexistentEntityException ex) {
             Logger.getLogger(RoleController.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
-        return "redirect:/role_table.html";
+
+        return "redirect:/admin/role_table.html";
+
     }
 }

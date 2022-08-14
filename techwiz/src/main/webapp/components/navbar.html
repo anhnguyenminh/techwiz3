@@ -6,7 +6,7 @@
     <div class="action nav-toggle">
       <i class="fa fa-bars" onclick="mobileMenuBar()" style="margin-left: 1%"></i>
     </div>
-  </div>
+  </div>  
   <a id="logo" href="index.html"><img src="images/logo.jpg" alt="logo" class="banner"></a>
   <div class="link-list">
     <a href="index.html">HOME</a>
@@ -24,9 +24,11 @@
     <span id="open-search" onclick="toggleSearchForm()"><i class="fa-solid fa-magnifying-glass fa-xl"
         style="color: rgb(30, 131, 239);"></i></span>
     <a href="admin/login.html"><i class="fa-solid fa-user-large fa-xl" style="color:rgb(180, 238, 132); "></i></a>
-    <div>
-      <i class="fa-solid fa-bag-shopping fa-xl tooltip" style="color:rgb(241, 183, 69);"></i>
+    <span id="open-cart"><i class="fa-solid fa-bag-shopping fa-xl" style="color:rgb(241, 183, 69);"></i></span>
+    <div class="cart">
+      <h2 style="text-decoration: underline;">CART</h2>
+      <ul id="cart-item">
+      </ul>
     </div>
-
   </div>
 </div>

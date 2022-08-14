@@ -6,7 +6,8 @@
     <link rel="icon" href="img/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="resources/product-details.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="resources/config.js"></script><script src="resources/script.js" charset="utf-8" ></script>
+    <script src="resources/script.js" charset="utf-8" ></script>
+    <script src="resources/config.js" charset="utf-8" ></script>
     <script src="resources/renderProduct.js" charset="utf-8" ></script>
     </script>
   </head>
@@ -43,7 +44,7 @@
               <p id="product-size"></p>
               <p>Quantity: 1</p>
               <!-- add to cart button -->
-              <a id="addtocartbtn" href="">Add to cart</a>
+              <span id="addtocartbtn" href="">Add to cart</span>
             </div>
             <hr>
 
@@ -64,3 +65,17 @@
     </div>
   </body>
 </html>
+
+
+<script type="text/javascript">
+  $(function(){
+    $("#addtocartbtn").click(addCart)
+
+    // add to cart function
+
+    function addCart(){
+      var id = window.location.href.split("id=")[1];
+      localStorage.setItem("item"+id, id);
+    }
+  })
+</script>
