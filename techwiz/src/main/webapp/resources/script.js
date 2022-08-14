@@ -50,31 +50,75 @@ $(".filter").ready(function(){
   var filter = `<span class="filter-btn" id="0">All</span>`
   $.get("http://10.0.12.94:8080/API/Category", function(data){
     data.forEach((item) => {
-      filter += `<span class="filter-btn" id="${item.id}">${item.name}</span>`
+      filter += `<span class="filter-btn"  onclick="loadCategory(${item.id})">${item.name}</span>`
     });
     $(".filter").html(filter)
 
   })
 })
 
-// render all
+// fake data
+function loadCategory(id) {
 
-$(".products").ready(function(){
-  $.get("http://10.0.12.94:8080/API/Product", function(data){
+  $.get("http://localhost/techwiz3/techwiz/src/main/webapp/resources/localResources.js", function(data){
     product = "";
-    data.forEach((item) => {
-      product += `
-              <a href="product-details.html?id=${item.id}">
-                  <div class="item">
-                    <img src="images/products/${item.imgName}" alt="">
-                    <p class="product-name">${item.title}</p>
-                    <p class="product-price">${item.price} $</p>
-                  </div>
-               </a>`;
-    });
-    $(".products").html(product);
+    data = JSON.parse(data);
+    if ( id != 0 ) {
+      data.forEach((item) => {
 
+        if( id == item.categoryId.id ){
+          product += `
+                  <a href="product-details.html?id=${item.id}">
+                      <div class="item">
+                        <img src="images/products/${item.imgName}" alt="">
+                        <p class="product-name">${item.title}</p>
+                        <p class="product-price">${item.price} $</p>
+                      </div>
+                   </a>`;
+        }
+
+      });
+    }else{
+      data.forEach((item) => {
+        product += `
+                <a href="product-details.html?id=${item.id}">
+                    <div class="item">
+                      <img src="images/products/${item.imgName}" alt="">
+                      <p class="product-name">${item.title}</p>
+                      <p class="product-price">${item.price} $</p>
+                    </div>
+                 </a>`;
+      });
+    }
+
+    $(".products").html(product);
 
   })
 
-})
+}
+
+
+
+// render all
+function loadDefault(){
+    $.get("http://localhost/techwiz3/techwiz/src/main/webapp/resources/localResources.js", function(data){
+      product = "";
+      data = JSON.parse(data);
+
+      data.forEach((item) => {
+        product += `
+                <a href="product-details.html?id=${item.id}">
+                    <div class="item">
+                      <img src="images/products/${item.imgName}" alt="">
+                      <p class="product-name">${item.title}</p>
+                      <p class="product-price">${item.price} $</p>
+                    </div>
+                 </a>`;
+      });
+      $(".products").html(product);
+
+
+    })
+
+}
+loadDefault();
