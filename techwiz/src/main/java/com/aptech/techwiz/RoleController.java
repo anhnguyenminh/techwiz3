@@ -47,7 +47,7 @@ public class RoleController extends BaseController {
         } catch (Exception ex) {
             Logger.getLogger(RoleController.class.getName()).log(Level.SEVERE, null, ex);
         }
-        return "redirect:/role_table.html";
+        return "redirect:../admin/role_table.html";
     }
 
     @PostMapping("/delete")
@@ -60,7 +60,7 @@ public class RoleController extends BaseController {
             Logger.getLogger(RoleController.class.getName()).log(Level.SEVERE, null, ex);
         }
 
-        return "redirect:/admin/role_table.html";
+        return "redirect:../admin/role_table.html";
 
     }
 }

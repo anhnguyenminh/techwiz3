@@ -6,10 +6,8 @@
 package com.aptech.techwiz;
 
 import com.aptech.techwiz.Controller.CategoryJpaController;
-import com.aptech.techwiz.Controller.RoleJpaController;
 import com.aptech.techwiz.Controller.exceptions.NonexistentEntityException;
 import com.aptech.techwiz.entities.Category;
-import com.aptech.techwiz.entities.Role;
 import controller.BaseController;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -35,7 +33,7 @@ public class CategoryController extends BaseController {
 
         categoryJpaController.create(category);
 
-        return "redirect:/role_table.html";
+        return "redirect:../admin/category_table.html";
     }
 
     @PostMapping("/update")
@@ -49,7 +47,7 @@ public class CategoryController extends BaseController {
         } catch (Exception ex) {
             Logger.getLogger(RoleController.class.getName()).log(Level.SEVERE, null, ex);
         }
-        return "redirect:/role_table.html";
+        return "redirect:../admin/category_table.html";
     }
     @PostMapping("/delete")
     public String delete(@WebParam(name = "id") String id) {
@@ -61,6 +59,6 @@ public class CategoryController extends BaseController {
             Logger.getLogger(RoleController.class.getName()).log(Level.SEVERE, null, ex);
         }
         
-        return "redirect:/role_table.html";
+        return "redirect:../admin/category_table.html";
     }
 }

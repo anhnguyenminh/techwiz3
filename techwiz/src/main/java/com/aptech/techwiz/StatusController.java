@@ -35,7 +35,7 @@ public class StatusController extends BaseController {
 
         statusJpaController.create(status);
 
-        return "redirect:/role_table.html";
+        return "redirect:../admin/product_status.html";
     }
 
     @PostMapping("/update")
@@ -49,7 +49,7 @@ public class StatusController extends BaseController {
         } catch (Exception ex) {
             Logger.getLogger(RoleController.class.getName()).log(Level.SEVERE, null, ex);
         }
-        return "redirect:/role_table.html";
+        return "redirect:../admin/product_status.html";
     }
 
     @PostMapping("/delete")
@@ -62,6 +62,6 @@ public class StatusController extends BaseController {
             Logger.getLogger(RoleController.class.getName()).log(Level.SEVERE, null, ex);
         }
 
-        return "redirect:/role_table.html";
+        return "redirect:../admin/product_status.html";
     }
 }
