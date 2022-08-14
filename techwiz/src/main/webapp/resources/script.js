@@ -98,7 +98,6 @@ function loadCategory(id) {
 }
 
 
-
 // render all
 function loadDefault(){
     $.get("http://localhost/techwiz3/techwiz/src/main/webapp/resources/localResources.js", function(data){
