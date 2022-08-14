@@ -1,14 +1,14 @@
-$(function(){
+$(function () {
   $("head").append('<link rel="shortcut icon" href="img/favicon.ico" />')
 })
 
-function loadAccountData(role){
-  $.get("http://10.0.12.94:8080/API/User", function(data){
+function loadAccountData(role) {
+  $.get("http://10.0.12.94:8080/API/User", function (data) {
     var accData = "";
     data.forEach((item) => {
 
-      if( item.roleId == role && role == 1 ){
-         accData += `
+      if (item.roleId == role && role == 1) {
+        accData += `
                    <tr>
                        <td>${item.fullname}</td>
                        <td>${item.email}</td>
@@ -22,7 +22,7 @@ function loadAccountData(role){
                        </th>
                    </tr>
                   `
-      }else if (item.roleId == role && role == 2 ) {
+      } else if (item.roleId == role && role == 2) {
         accData += `
                   <tr>
                       <td>${item.fullname}</td>
@@ -54,12 +54,12 @@ function loadAccountData(role){
 
 }
 
-function loadRole(){
-  $.get("http://10.0.12.94:8080/API/Role", function(data){
+function loadRole() {
+  $.get("http://10.0.12.94:8080/API/Role", function (data) {
     var roleData = "";
     data.forEach((item) => {
 
-     roleData += `
+      roleData += `
                <tr>
                    <td>${item.id}</td>
                    <td>${item.name}</td>
@@ -74,12 +74,12 @@ function loadRole(){
   })
 }
 
-$("#statusData").ready(function(){
-  $.get("http://10.0.12.94:8080/API/Status", function(data){
+$("#statusData").ready(function () {
+  $.get("http://10.0.12.94:8080/API/Status", function (data) {
     var statusData = "";
     data.forEach((item) => {
 
-     statusData += `
+      statusData += `
                <tr>
                    <td>${item.id}</td>
                    <td>${item.statusName}</td>
@@ -94,12 +94,12 @@ $("#statusData").ready(function(){
   })
 })
 
-$("#categoryData").ready(function(){
-  $.get("http://10.0.12.94:8080/API/Category", function(data){
+$("#categoryData").ready(function () {
+  $.get("http://10.0.12.94:8080/API/Category", function (data) {
     var categoryData = "";
     data.forEach((item) => {
 
-     categoryData += `
+      categoryData += `
                <tr>
                    <td>${item.id}</td>
                    <td>${item.name}</td>
@@ -114,12 +114,12 @@ $("#categoryData").ready(function(){
   })
 })
 
-$("#productsData").ready(function(){
-  $.get("http://10.0.12.94:8080/API/Product", function(data){
+$("#productsData").ready(function () {
+  $.get("http://10.0.12.94:8080/API/Product", function (data) {
     var productaData = "";
     data.forEach((item) => {
 
-     productaData += `
+      productaData += `
                <tr>
                  <td>${item.title}</td>
                  <td>${item.categoryId.name}</td>
@@ -138,11 +138,11 @@ $("#productsData").ready(function(){
   })
 })
 
-$("#soldProductData").ready(function(){
-  $.get("http://10.0.12.94:8080/API/Orderdetail", function(data){
+$("#soldProductData").ready(function () {
+  $.get("http://10.0.12.94:8080/API/Orderdetail", function (data) {
     var soldProductaData = "";
     data.forEach((item) => {
-     soldProductaData += `
+      soldProductaData += `
      <tr>
          <td class="align-middle">${item.orderId.userId.fullname}</td>
          <td class="align-middle">${item.orderId.name}</td>
@@ -163,12 +163,12 @@ $("#soldProductData").ready(function(){
   })
 })
 
-$("#commentsData").ready(function(){
-  $.get("http://10.0.12.94:8080/API/Comment", function(data){
+$("#commentsData").ready(function () {
+  $.get("http://10.0.12.94:8080/API/Comment", function (data) {
     var commentsData = "";
     data.forEach((item) => {
 
-     commentsData += `
+      commentsData += `
      <tr>
          <td class="align-middle">${item.userId.fullname}</td>
          <td class="align-middle">${item.note}</td>
@@ -185,11 +185,11 @@ $("#commentsData").ready(function(){
 })
 
 
-$("#contactData").ready(function(){
-  $.get("http://10.0.12.94:8080/API/Contact", function(data){
+$("#contactData").ready(function () {
+  $.get("http://10.0.12.94:8080/API/Contact", function (data) {
     var contactData = "";
     data.forEach((item) => {
-     contactData += `
+      contactData += `
      <tr>
          <td class="align-middle">${item.name}</td>
          <td class="align-middle">${item.email}</td>
